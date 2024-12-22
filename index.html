@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ Page</title>
+  <!-- Link to Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .faq-answer {
+      font-size: 16px;
+      font-weight: 400;
+      margin-top: 10px;
+      line-height: 1.6;
+      display: none;
+    }
+
+    .faq-icon {
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-icon.open {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+    <h1>
+        <center>
+            F.A.Q Page
+        </center>
+    </h1>
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question">
+        What is My Name ?
+        <span class="faq-icon">&#x25BC;</span>
+      </div>
+      <div class="faq-answer">
+        My name is Muhhamad.Haaziq.
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        I am Graphic Desginer ?
+        <span class="faq-icon">&#x25BC;</span>
+      </div>
+      <div class="faq-answer">
+        Yes Iam Graphic Desginer Since 2years and have 200 Desgin Certificate of Canva.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-question">
+        I am Programmer
+        <span class="faq-icon">&#x25BC;</span>
+      </div>
+      <div class="faq-answer">
+        Yes I am learning Poggraming from June.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      const icon = item.querySelector('.faq-icon');
+
+      question.addEventListener('click', () => {
+        const isOpen = answer.style.display === 'block';
+
+        faqItems.forEach(i => {
+          i.querySelector('.faq-answer').style.display = 'none';
+          i.querySelector('.faq-icon').classList.remove('open');
+        });
+
+        if (!isOpen) {
+          answer.style.display = 'block';
+          icon.classList.add('open');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
